@@ -1,0 +1,23 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import { appName } from '@chore/config/constants';
+import { AnimationCanvas } from '@/modules/chore/components/pages/landing/AnimationCanvas';
+import { DescriptionHero } from '@/modules/chore/components/pages/landing/DescriptionHero';
+---
+
+<MainLayout
+  title=`${appName}`
+  description=`${appName} is a Music Producer from Costa Rica`
+>
+  <div
+    class="z-40 fixed top-1/2 flex flex-col items-center justify-center gap-4"
+  >
+    <h1
+      class="pointer-events-none select-none z-0 text-9xl font-code uppercase text-white"
+    >
+      LeotheProdu
+    </h1>
+    <DescriptionHero client:load />
+  </div>
+  <AnimationCanvas client:load />
+</MainLayout>

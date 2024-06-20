@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-2xl;
+  }
+  h5 {
+    @apply text-xl;
+  }
+  code {
+    @apply py-1 px-2 rounded text-indigo-400;
+  }
+  pre {
+    @apply p-4 text-indigo-500 rounded;
+  }
+  blockquote {
+    border-left: 4px solid red;
+    padding: 0 0 0 20px;
+    margin: 0px;
+    font-size: 1.333em;
+    @apply border-l-indigo-800;
+  }
+  table {
+    width: 100%;
+    @apply border-collapse w-full text-center border-stone-800 text-slate-200;
+  }
+  th {
+    @apply px-4 py-2 text-xl border border-stone-400;
+  }
+  tr {
+    @apply bg-gray-900 hover:bg-gray-600 border border-stone-800;
+  }
+
+  pre > code {
+    all: unset;
+  }
+  li {
+    @apply list-item;
+  }
+  mark {
+    @apply bg-indigo-500 p-1 rounded;
+  }
+  a {
+    @apply font-semibold;
+  }
+
+  @font-face {
+    font-family: 'JetBrainsMonoNL';
+    src: url(/JetBrainsMonoNL-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist-Regular';
+    src: url(/Geist-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+.animate-enter {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(0, -200px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.animate-leave {
+  animation: fadeOut 0.5s ease forwards;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(0, -200px);
+  }
+}

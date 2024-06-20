@@ -1,0 +1,36 @@
+---
+import { appName } from '@/modules/chore/config/constants';
+import BaseHead from '@chore/utils/BaseHead.astro';
+/* import Navbar from '@/modules/chore/components/layout/navbar.astro'; */
+/* import { CheckIsLoggedIn } from '@/modules/chore/services/CheckIsLoggedIn'; */
+interface Props {
+  title?: string;
+  description: string;
+  image?: string;
+}
+const {
+  title = `${appName}`,
+  description = `${appName} is a Music Producer from Costa Rica`,
+  image = 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=600',
+} = Astro.props as Props;
+/* const { currentLocale } = Astro; */
+---
+
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+  </head>
+
+  <body
+    class="font-geist dark:bg-primario bg-secundario text-primario dark:text-secundario flex flex-col h-screen w-full justify-center items-center"
+  >
+    <!-- <CheckIsLoggedIn client:only="react" /> -->
+    <!-- <header class="w-full flex justify-center items-center">
+      <Navbar />
+    </header> -->
+    <main class="flex flex-col h-full w-full items-center relative">
+      <slot />
+    </main>
+  </body>
+</html>
